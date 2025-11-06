@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.R
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.DividerDefaults.Thickness
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
@@ -21,6 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+
 
 @Composable
 fun FormIsian(
@@ -52,7 +54,7 @@ fun FormIsian(
             )
             HorizontalDivider(modifier = Modifier
                 .padding(all = 20.dp)
-                .width(width = 250.dp), thickness = Thickness, color = Color.Red)
+                .width(width = 250.dp), thickness = Thickness,color = Color.Red)
             Row {
                 jenisK.forEach {
                     item ->
@@ -61,9 +63,24 @@ fun FormIsian(
                             selected = false,
                             onClick = {item}
                         )
+                        Text(text = item)
                     }
                 }
             }
+            HorizontalDivider(modifier = Modifier
+                .padding(all = 20.dp)
+                .width(width = 250.dp),
+                1.dp,
+                color = Color.Red
+            )
+            OutlinedTextField(
+                value = "",
+                singleLine = true,
+                modifier = Modifier
+                    .width(250.dp),
+                label = {Text(text = "Alamat")},
+                onValueChange = {},
+            )
         }
     }
 }
