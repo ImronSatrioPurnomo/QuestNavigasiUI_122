@@ -1,9 +1,13 @@
 package com.example.navigasiku.view
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -22,5 +26,10 @@ fun FormIsian(
                     (containerColor = colorResource(id = R.color.teal_700))
             )
         }
-    )
+    ){ isiRuang ->
+        Column (modifier = Modifier.padding(paddingValues = isiRuang),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        )
+    }
 }
