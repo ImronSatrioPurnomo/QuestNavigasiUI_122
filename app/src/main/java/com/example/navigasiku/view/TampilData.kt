@@ -1,0 +1,41 @@
+package com.example.navigasiku.view
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
+import com.example.navigasiku.R
+
+@Composable
+fun TampilData(
+    onBackBtnClick:()-> Unit
+){
+    val item = listOf(
+        Pair(first = stringResource(id = R.string.nama_lengkap), second = "Contoh Nama"),
+        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Lainnya"),
+        Pair(first = stringResource(id = "ALAMAT"), second = "YOGYAKARTA")
+    )
+    Scaffold (modifier = Modifier,
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = stringResource(id = R.string.tampil),
+                        color = Color.White
+                    )},
+                colors = TopAppBarDefaults
+                    .mediumTopAppBarColors(containerColor = colorResource(id = R.color.teal_700)
+                    )
+            )
+        }){ isiRuang->
+        Column (modifier = Modifier.padding(paddingValues = isiRuang),
+            verticalArrangement = Arrangement.SpaceBetween)
+    }
+}
