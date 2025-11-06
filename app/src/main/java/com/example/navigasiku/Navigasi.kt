@@ -5,6 +5,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.internal.composableLambda
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -39,10 +40,17 @@ fun DataApp(
             composable(route = Navigasi.Detail.name){
                 TampilData(
                     onBackBtnClick = {
-
+                        cancelAndBackToFormulirku(navController)
                     }
                 )
             }
         }
     }
+}
+
+private fun cancelAndBackToFormulirku(
+    navController: NavHostController
+) {
+    navController.popBackStack(route = Navigasi.Formulirku.name,
+        inclusive = false)
 }
