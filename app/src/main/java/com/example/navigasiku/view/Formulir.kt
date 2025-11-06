@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+
 
 package com.example.navigasiku.view
 
@@ -32,6 +32,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormIsian(
     jenisK:List<String> = listOf("Laki-laki","Perempuan"),
@@ -42,7 +43,7 @@ fun FormIsian(
             TopAppBar(
                 title = {Text(text = stringResource(id = R.string.home),
                     color = Color.White)},
-                colors = TopAppBarDefaults.TopAppBarColors
+                colors = TopAppBarDefaults.topAppBarColors
                     (containerColor = colorResource(id = R.color.teal_700))
             )
         }
